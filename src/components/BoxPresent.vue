@@ -8,10 +8,16 @@
 
 export default {
     
-    props:["num"],
+    props:["num","closeBox"],
     data() {
         return {
             isOpen: false
+        }
+    },
+    watch: {
+        closeBox(val){
+            console.log('sadsadsa',val)
+            if(val) this.isOpen = !val
         }
     },
 }

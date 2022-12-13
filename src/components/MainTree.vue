@@ -3,7 +3,7 @@
         <ModalPresent v-show="isOpen" :data="curdata" @close="close" />
         <h3 class="newyear-title">Новогодний подарок ждёт тебя под ёлкой</h3>
         <div v-for="i in boxList" :key="i.num" class="boxWrapper" :class="i.class" @click="actived(i)">
-            <BoxPresent :num="i.num" />
+            <BoxPresent :num="i.num" :close-box="closeBox"/>
         </div>
     </div>
 </template>
@@ -57,16 +57,19 @@ export default {
                 subtitle: 'Подписка на 12 месяцев',
 
             },
-            isOpen: false
+            isOpen: false,
+            closeBox:false
         }
     },
     methods: {
         actived(data) {
             this.isOpen = true
             this.curdata = data
+            this.closeBox = false
         },
         close() {
             this.isOpen = false
+            this.closeBox = true
         }
     },
 }

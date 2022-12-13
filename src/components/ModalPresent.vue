@@ -27,12 +27,17 @@
                 </div>
 
                 <p class="form-text">* — поля, обязательные для заполнения</p>
-                <button type="submit" class="form-btn">Получить подарок</button>
-                <p class="form-text">Нажимая кнопку «Получить подарок», вы даёте свое согласие на обработку персональных
-                    данных и соглашаетесь с политикой обработки персональных данных</p>
+                <button type="submit" :disabled="isLoading" class="form-btn">Получить подарок</button>
+                <p class="form-text">Нажимая кнопку «Получить подарок», вы даёте свое согласие на <a
+                        href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
+                        target="_blank">обработку
+                        персональных
+                        данных</a> и соглашаетесь с <a
+                        href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
+                        target="_blank"> политикой обработки персональных данных</a></p>
             </form>
         </div>
-        <div class="modal" v-else>
+        <div class="modal greet" v-else>
             <div class="modal-close" @click="close"></div>
             <div class="modal-title">Ура</div>
             <div class="modal-subtitle">
@@ -53,7 +58,8 @@ export default {
             nameInput: '',
             phoneInput: '',
             mailInput: '',
-            sended: false
+            sended: false,
+            isLoading: false
         }
     },
     methods: {
@@ -61,7 +67,9 @@ export default {
             this.$emit("close")
         },
         async sendData() {
-            const data = [this.nameInput, this.phoneInput, this.mailInput]
+            this.isLoading = true
+            const present = `Выбран подарок ${this.data.title}`
+            const data = [this.nameInput, this.phoneInput, this.mailInput, present]
             await fetch(this.url, {
                 method: "POST",
                 mode: "no-cors",
@@ -74,6 +82,7 @@ export default {
                 .then((el) => {
                     console.log(el);
                     this.sended = true
+                    this.isLoading = false
                 })
                 .catch((error) => console.log("error", error));
         }
@@ -108,6 +117,10 @@ export default {
     @media screen and (max-width:650px) {
         padding: 35px 25px;
     }
+}
+
+.greet {
+    text-align: center;
 }
 
 .modal-close {
@@ -264,6 +277,9 @@ export default {
         font-size: 10px;
         line-height: 14px;
         color: rgba(255, 255, 255, 0.6);
+        a{
+            text-decoration: underline;
+        }
     }
 
     .form-btn {
