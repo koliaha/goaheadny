@@ -59,9 +59,19 @@ export default {
     right: 0;
   }
 
-  @media screen and (max-width:650px) {
-    &::before,&::after {
-      background-size: auto 100% ;
+  @media screen and (max-width:950px) {
+
+    &::before,
+    &::after {
+      background-size: auto 100%;
+    }
+  }
+
+  @media screen and (max-width:450px) {
+
+    &::before,
+    &::after {
+      max-width: 25%;
     }
   }
 }

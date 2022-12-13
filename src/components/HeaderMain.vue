@@ -41,6 +41,10 @@
         margin-bottom: 0px;
     }
 
+    @media screen and (max-width:650px) {
+        max-width: 100px;
+    }
+
     img {
         width: 100%;
     }
@@ -75,6 +79,14 @@
             max-width: 40px;
         }
     }
+    @media screen and (max-width:450px) {
+        font-size: 12px;
+    line-height: 25px;
+
+        img {
+            max-width: 20px;
+        }
+    }
 
 }
 
@@ -91,6 +103,10 @@
 
     @media screen and (max-width:940px) {
         font-size: 20px;
+    }
+    @media screen and (max-width:450px) {
+        font-size: 15px;
+        line-height: 20px;
     }
 }
 </style>

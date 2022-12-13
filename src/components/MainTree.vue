@@ -91,6 +91,12 @@ export default {
         max-width: 700px;
     }
 
+    @media screen and (max-width:680px) {
+        min-height: 633px;
+        margin-top: 20px;
+        max-width: 90%;
+    }
+
     .boxWrapper {
         position: absolute;
         width: 100%;
@@ -104,6 +110,17 @@ export default {
 
         @media screen and (max-width:1325px) {
             max-width: 120px;
+            right: 40px;
+        }
+
+        @media screen and (max-width:680px) {
+            max-width: 100px;
+            right: 30px;
+        }
+
+        @media screen and (max-width:450px) {
+            max-width: 85px;
+            right: 10px;
         }
     }
 
@@ -112,8 +129,22 @@ export default {
         left: 250px;
         bottom: 20px;
         z-index: 10;
+
         @media screen and (max-width:1325px) {
             max-width: 140px;
+            left: 236px;
+            bottom: 15px;
+        }
+
+        @media screen and (max-width:680px) {
+            max-width: 131px;
+            left: 160px;
+            bottom: 15px;
+        }
+
+        @media screen and (max-width:450px) {
+            max-width: 114px;
+            left: 61px;
         }
     }
 
@@ -122,8 +153,20 @@ export default {
         right: 30px;
         bottom: 9px;
         z-index: 9;
+
         @media screen and (max-width:1325px) {
             max-width: 215px;
+            right: 80px;
+        }
+
+        @media screen and (max-width:680px) {
+            max-width: 167px;
+            right: 70px;
+        }
+
+        @media screen and (max-width:450px) {
+            max-width: 145px;
+            left: 186px;
         }
     }
 
@@ -131,8 +174,20 @@ export default {
         max-width: 215px;
         right: 260px;
         z-index: 10;
+
         @media screen and (max-width:1325px) {
             max-width: 115px;
+            right: 240px;
+        }
+
+        @media screen and (max-width:680px) {
+            max-width: 94px;
+            right: 190px;
+        }
+
+        @media screen and (max-width:450px) {
+            max-width: 74px;
+            left: 145px;
         }
     }
 
@@ -141,8 +196,20 @@ export default {
         left: 140px;
         bottom: 30px;
         z-index: 8;
+
         @media screen and (max-width:1325px) {
             max-width: 100px;
+            left: 170px;
+        }
+
+        @media screen and (max-width:680px) {
+            max-width: 89px;
+            left: 115px;
+        }
+
+        @media screen and (max-width:450px) {
+            max-width: 80px;
+            left: 35px;
         }
     }
 
@@ -151,8 +218,20 @@ export default {
         left: 25px;
         bottom: 15px;
         z-index: 8;
+
         @media screen and (max-width:1325px) {
             max-width: 115px;
+            left: 105px;
+        }
+
+        @media screen and (max-width:680px) {
+            max-width: 106px;
+            left: 55px;
+        }
+
+        @media screen and (max-width:450px) {
+            max-width: 90px;
+            left: 0px;
         }
     }
 
@@ -169,5 +248,10 @@ export default {
     left: 50%;
     top: 0;
     transform: translateX(-50%);
+
+    @media screen and (max-width:450px) {
+        font-size: 26px;
+        line-height: 30px;
+    }
 }
 </style>

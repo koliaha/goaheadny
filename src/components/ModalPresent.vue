@@ -95,13 +95,16 @@ export default {
     transform: translateY(-50%);
     max-width: 520px;
     width: 100%;
+
     @media screen and (max-width:1125px) {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
     @media screen and (max-width:725px) {
-       max-width: 85%;
+        max-width: 85%;
     }
+
     @media screen and (max-width:650px) {
         padding: 35px 25px;
     }
@@ -147,6 +150,11 @@ export default {
     font-size: 45px;
     line-height: 54px;
     margin-bottom: 20px;
+
+    @media screen and (max-width:450px) {
+        font-size: 33px;
+        line-height: 40px;
+    }
 }
 
 .modal-subtitle {
@@ -154,6 +162,12 @@ export default {
     font-size: 30px;
     line-height: 36px;
     margin-bottom: 52px;
+
+    @media screen and (max-width:450px) {
+        font-size: 21px;
+        line-height: 25px;
+        margin-bottom: 25px;
+    }
 }
 
 .modal-text {
@@ -162,6 +176,12 @@ export default {
     line-height: 19px;
     opacity: 0.5;
     margin-bottom: 20px;
+
+    @media screen and (max-width:450px) {
+        font-size: 12px;
+        line-height: 13px;
+        margin-bottom: 15px;
+    }
 }
 
 .modal-link {
@@ -181,6 +201,12 @@ export default {
 
     &:hover {
         opacity: 0.8;
+    }
+
+    @media screen and (max-width:450px) {
+        font-size: 17px;
+        line-height: 13px;
+        padding: 15px 0;
     }
 }
 

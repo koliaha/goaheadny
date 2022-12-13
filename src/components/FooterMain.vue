@@ -100,6 +100,10 @@
       font-size: 25px;
       line-height: 26px;
     }
+
+    @media screen and (max-width:450px) {
+      font-size: 18px;
+    }
   }
 
   .footer-contact {
@@ -185,7 +189,9 @@
 
   .footer-logo {
     max-width: 120px;
-
+    @media screen and (max-width:450px) {
+      max-width: 90px;
+    }
     img {
       width: 100%;
     }
