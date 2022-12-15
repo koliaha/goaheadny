@@ -1,5 +1,4 @@
 <template>
-    <div class="modal-wrapper">
         <div class="modal" v-if="!formActive">
             <div class="modal-close" @click="close"></div>
             <div class="modal-title">{{ data.title }}</div>
@@ -7,7 +6,7 @@
                 {{ data.subtitle }}
             </div>
             <div class="modal-text">
-                *Cсылка для активации подписки придёт тебе на почту в течение 2-х рабочих дней.
+                {{data.mail}}
             </div>
             <button class="modal-link" @click="formActive = true">Выбрать этот подарок</button>
         </div>
@@ -25,11 +24,11 @@
                 <div class="input-form">
                     <input type="email" v-model="mailInput" placeholder="Почта" required>
                 </div>
-
+                
                 <p class="form-text">* — поля, обязательные для заполнения</p>
                 <button type="submit" :disabled="isLoading" class="form-btn">Получить подарок</button>
                 <p class="form-text">Нажимая кнопку «Получить подарок», вы даёте свое согласие на <a
-                        href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
+                        href="https://goahead.ai/go_new_year2023/sogl.html"
                         target="_blank">обработку
                         персональных
                         данных</a> и соглашаетесь с <a
@@ -46,7 +45,6 @@
 
             <button class="modal-link" @click="close">Закрыть</button>
         </div>
-    </div>
 </template>
 <script>
 export default {
@@ -65,6 +63,7 @@ export default {
     methods: {
         close() {
             this.$emit("close")
+            this.formActive = false
         },
         async sendData() {
             this.isLoading = true
@@ -90,21 +89,15 @@ export default {
 }
 </script>
 <style lang="scss">
-.modal-wrapper {}
 
 .modal {
     background: #131212;
     border: 1px solid #FF7323;
     border-radius: 35px;
     padding: 70px 57px;
-    position: fixed;
-    left: 20%;
-    top: 50%;
-    z-index: 100;
-    transform: translateY(-50%);
+    
     max-width: 520px;
     width: 100%;
-
     @media screen and (max-width:1125px) {
         left: 50%;
         transform: translate(-50%, -50%);
@@ -115,7 +108,7 @@ export default {
     }
 
     @media screen and (max-width:650px) {
-        padding: 35px 25px;
+        padding: 55px 25px 35px;
     }
 }
 
@@ -277,7 +270,8 @@ export default {
         font-size: 10px;
         line-height: 14px;
         color: rgba(255, 255, 255, 0.6);
-        a{
+
+        a {
             text-decoration: underline;
         }
     }

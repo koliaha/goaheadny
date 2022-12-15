@@ -4,14 +4,16 @@
             <img src="@/assets/img/logo.svg" alt="">
         </div>
         <div class="header-title">
-            <h1>Что объединяет <img src="@/assets/img/tree.svg" alt="" /> Новый год и <img src="@/assets/img/meta.svg"
+            <h1>Что объединяет <img src="@/assets/img/tree.svg" alt="" /> Новый год <br/> и <img src="@/assets/img/meta.svg"
                     alt="" /> Метавселенную? </h1>
         </div>
         <div class="header-subtitle">
-            <p>Они — символ будущего, новых надежд и планов. Точно не знаешь, что принесет Новый год и какие тайны
-                хранит Метавселенная.
-                Но чувствуешь, что мечты сбудутся, а в digital-реальности скучно определенно не будет. Желаем исполнения
-                желаний, новых впечатлений и успехов во всех делах.
+            <p>
+                Они - символ будущего, новых надежд и планов. Точно не знаешь,
+                что принесет Новый год, и какие тайны хранит Метавселенная.
+                Но чувствуешь, что мечты сбудутся, а в digital-реальности скучно
+                определенно не будет. Желаем креативных идей, новых впечатлений
+                и неиссякаемой энергии.
                 <br />
                 <br />
                 С Новым годом!
@@ -74,14 +76,15 @@
     @media screen and (max-width:650px) {
         font-size: 17px;
         line-height: 40px;
-
+        margin: 65px 0 32px;
         img {
             max-width: 40px;
         }
     }
-    @media screen and (max-width:450px) {
+
+    @media screen and (max-width:520px) {
         font-size: 12px;
-    line-height: 25px;
+        line-height: 25px;
 
         img {
             max-width: 20px;
@@ -104,9 +107,10 @@
     @media screen and (max-width:940px) {
         font-size: 20px;
     }
-    @media screen and (max-width:450px) {
-        font-size: 15px;
-        line-height: 20px;
+
+    @media screen and (max-width:650px) {
+        font-size: 14px;
+    line-height: 17px;
     }
 }
 </style>

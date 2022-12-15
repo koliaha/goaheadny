@@ -58,6 +58,7 @@
     background: #FF7323;
     overflow: hidden;
     height: 47px;
+    user-select: none;
     position: relative;
     text-align: center;
     font-size: 18px;
@@ -87,7 +88,7 @@
 
     }
 
-    $duration: 20s;
+    $duration: 35s;
 
     .ticker-wrapper__first-half,
     .ticker-wrapper__second-half {
@@ -95,14 +96,15 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        width: 100%;
         position: absolute;
         top: 0;
         right: 0;
-        animation: ticker $duration*2 infinite linear forwards;
+        animation: ticker $duration infinite linear forwards;
     }
 
     .ticker-wrapper__second-half {
-        animation: $duration/2 ticker $duration infinite linear forwards;
+        animation: $duration ticker $duration infinite linear forwards;
     }
 }
 

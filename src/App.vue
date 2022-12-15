@@ -19,22 +19,23 @@ export default {
     return {
       snowConf: {
         windPower: 1,
-        speed: 3,
+        speed: 1,
         count: 12,
         size: 10,
         opacity: 1,
-        images: ['https://raw.githubusercontent.com/bob-chen/let_it_snow/master/demo/snow.png',
-          'https://raw.githubusercontent.com/bob-chen/let_it_snow/master/demo/sock.png',
-          'https://raw.githubusercontent.com/bob-chen/let_it_snow/master/demo/tree.png']
+        images: ['https://goahead.ai/go_new_year2023/fall/snow.png',
+          'https://goahead.ai/go_new_year2023/fall/tree.png',
+          'https://goahead.ai/go_new_year2023/fall/box1.png',
+          'https://goahead.ai/go_new_year2023/fall/box2.png',
+          'https://goahead.ai/go_new_year2023/fall/logo.png']
       },
       show: false
     }
   },
   mounted() {
-    this.show = true
-    //   setTimeout( () => {
-    //       this.show = false
-    //   }, 5000)
+        this.show = true
+      // setTimeout( () => {
+      // }, 2000)
 
     //   setTimeout( () => {
     //       this.show = true
@@ -91,7 +92,7 @@ a {
   }
 }
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 7px;
 }
 
 /* Track */

@@ -1,9 +1,12 @@
 <template>
     <div class="newyear">
-        <ModalPresent v-show="isOpen" :data="curdata" @close="close" />
+        <div class="modal-wrapper" :class="{ 'vis': isOpen }"></div>
+        <ModalPresent class="modal-pos" :class="{ 'toLeft': curdata.left }" v-show="isOpen" :data="curdata"
+            @close="close" />
         <h3 class="newyear-title">Новогодний подарок ждёт тебя под ёлкой</h3>
-        <div v-for="i in boxList" :key="i.num" class="boxWrapper" :class="i.class" @click="actived(i)">
-            <BoxPresent :num="i.num" :close-box="closeBox"/>
+        <div v-for="i in boxList" :key="i.num" class="boxWrapper"
+            :class="[i.class, i.num == curdata.num ? 'chosenBox' : '']" @click="actived(i)">
+            <BoxPresent :num="i.num" :close-box="closeBox" />
         </div>
     </div>
 </template>
@@ -22,32 +25,38 @@ export default {
                     num: 1,
                     title: 'Telegram Premium',
                     subtitle: 'Подписка на 12 месяцев',
-
+                    mail: '*Твой Тайный Санта оформит тебе подписку в течение 2-х рабочих дней.',
+                    left: true
                 }, {
                     class: 'second',
                     num: 2,
                     title: 'VPN SurfShark',
                     subtitle: 'Подключение ко всем расширенным функциям VPN на полгода',
+                    mail: '*Cсылка для скачивания и активации придёт тебе на почту в течение 2-х рабочих дней.', left: false
                 }, {
                     class: 'third',
                     num: 3,
                     title: 'ЛитРес',
                     subtitle: 'Электронный подарочный сертификат на лучшие книги',
+                    mail: '*Сертификат придёт тебе на почту в течение 2-х рабочих дней.', left: true
                 }, {
                     class: 'forth',
                     num: 4,
                     title: 'Ляг.Спиной',
                     subtitle: 'Сертификат на 1 сеанс массажа классика/спорт/релакс/лицо',
+                    mail: '*Сертификат придёт тебе на почту в течение 2-х рабочих дней. Сертификат действует 2 месяца.', left: true
                 }, {
                     class: 'fifth',
                     num: 5,
                     title: 'Менталитет',
                     subtitle: 'Электронный сертификат на 5000₽ в ресторан Менталитет',
+                    mail: '*Для бронирования столика позвоните по номеру +7 903 017-73-88. При посещении предъявите сертификат.', left: false
                 }, {
                     class: 'sixth',
                     num: 6,
                     title: 'Amediateka',
                     subtitle: 'Индивидуальная подписка на 6 месяцев',
+                    mail: '*Cсылка для активации подписки придёт тебе на почту в течение 2-х рабочих дней.', left: false
                 },
             ],
             curdata: {
@@ -55,10 +64,10 @@ export default {
                 num: 1,
                 title: 'Telegram Premium',
                 subtitle: 'Подписка на 12 месяцев',
-
+                left: true
             },
             isOpen: false,
-            closeBox:false
+            closeBox: false
         }
     },
     methods: {
@@ -76,6 +85,47 @@ export default {
 </script>
 
 <style lang="scss">
+.modal-wrapper {
+    background-color: rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    position: fixed;
+    z-index: 90;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    &.vis {
+        visibility: visible;
+    }
+}
+
+.modal-pos {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    z-index: 110;
+    transform: translateY(-50%);
+
+    &.toLeft {
+        right: auto;
+        left: 5%;
+
+        @media screen and (max-width:725px) {
+            left: 5%;
+            right: auto;
+            transform: translateY(-50%);
+        }
+    }
+
+    @media screen and (max-width:725px) {
+        left: 5%;
+        right: auto;
+        transform: translateY(-50%);
+    }
+}
+
 .newyear {
     min-height: 875px;
     position: relative;
@@ -98,6 +148,10 @@ export default {
         min-height: 633px;
         margin-top: 20px;
         max-width: 90%;
+    }
+
+    @media screen and (max-width:550px) {
+        margin-top: 85px;
     }
 
     .boxWrapper {
@@ -238,6 +292,10 @@ export default {
         }
     }
 
+    .chosenBox {
+        z-index: 103;
+    }
+
 }
 
 .newyear-title {
@@ -252,9 +310,9 @@ export default {
     top: 0;
     transform: translateX(-50%);
 
-    @media screen and (max-width:450px) {
-        font-size: 26px;
-        line-height: 30px;
+    @media screen and (max-width:550px) {
+        font-size: 20px;
+        line-height: 24px;
     }
 }
 </style>

@@ -204,5 +204,9 @@
   line-height: 19px;
   margin-top: 78px;
   display: block;
+  @media screen and (max-width:450px) {
+    font-size: 13px;
+  line-height: 15px;
+  }
 }
 </style>
