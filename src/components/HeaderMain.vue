@@ -4,19 +4,19 @@
             <img src="@/assets/img/logo.svg" alt="">
         </div>
         <div class="header-title">
-            <h1>Что объединяет <img src="@/assets/img/tree.svg" alt="" /> Новый год <br/> и <img src="@/assets/img/meta.svg"
-                    alt="" /> Метавселенную? </h1>
+            <h1>C Новым 2023 Digital Годом! <img src="@/assets/img/tree.svg" alt="" /></h1>
+            <h1 v-if="false">Что объединяет <img src="@/assets/img/tree.svg" alt="" /> Новый год <br /> и <img
+                    src="@/assets/img/meta.svg" alt="" /> Метавселенную? </h1>
         </div>
         <div class="header-subtitle">
             <p>
-                Они - символ будущего, новых надежд и планов. Точно не знаешь,
-                что принесет Новый год, и какие тайны хранит Метавселенная.
-                Но чувствуешь, что мечты сбудутся, а в digital-реальности скучно
-                определенно не будет. Желаем креативных идей, новых впечатлений
-                и неиссякаемой энергии.
+                Этот год показал нам, что даже если поставить с ног на голову все, к чему мы привыкли, останутся важны
+                человеческие отношения, поддержка и надежность. В Новом году мы желаем вам быть в окружении людей и
+                бизнесов, которым вы доверяете.
                 <br />
                 <br />
-                С Новым годом!
+                Мы решили сделать подарки более digital, чтобы они смогли порадовать наших клиентов и партнеров в любой
+                точке мира.
             </p>
         </div>
     </div>
@@ -37,7 +37,7 @@
     max-width: 150px;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 45px;
+    margin-bottom: 75px;
 
     @media screen and (max-width:1325px) {
         margin-bottom: 0px;
@@ -77,6 +77,7 @@
         font-size: 17px;
         line-height: 40px;
         margin: 65px 0 32px;
+
         img {
             max-width: 40px;
         }
@@ -110,7 +111,7 @@
 
     @media screen and (max-width:650px) {
         font-size: 14px;
-    line-height: 17px;
+        line-height: 17px;
     }
 }
 </style>

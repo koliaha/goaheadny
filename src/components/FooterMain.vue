@@ -40,7 +40,7 @@
               </div>
             </a>
           </div>
-          <p class="address"><a href="mailto:hi@gomobile.ru"><span itemprop="email">hi@gomobile.ru</span></a>
+          <p class="address"><a href="mailto:pr@gomobile.ru"><span itemprop="email">pr@gomobile.ru</span></a>
             <!-- | <a
               href="tel:+7 (771) 780-89-69"><span itemprop="telephone">+7 (771) 780-89-69</span> </a>  -->
           </p>

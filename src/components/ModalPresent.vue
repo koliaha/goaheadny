@@ -26,7 +26,12 @@
                 </div>
                 
                 <p class="form-text">* — поля, обязательные для заполнения</p>
-                <button type="submit" :disabled="isLoading" class="form-btn">Получить подарок</button>
+                <button type="submit" v-if="!isLoading" :disabled="isLoading" class="form-btn">
+                     Получить подарок
+                </button>
+                <button v-else :disabled="isLoading" class="form-btn">
+                     Отправка...
+                </button>
                 <p class="form-text">Нажимая кнопку «Получить подарок», вы даёте свое согласие на <a
                         href="https://goahead.ai/go_new_year2023/sogl.html"
                         target="_blank">обработку
@@ -52,7 +57,7 @@ export default {
     data() {
         return {
             formActive: false,
-            url: 'https://script.google.com/macros/s/AKfycbxSOAd8Js1JuOBQRdNstHr9QmaobLOTBiZQxRpB8QY6v8dZkRbVh0HqYsrjXJBPEyo0WQ/exec',
+            url: 'https://script.google.com/macros/s/AKfycbyHXmslZncRJXijBVVNIrP9gBAieqAVAhLER8cuVYbJq2ud-JNXpJyKVXXLWLex6nHPkw/exec',
             nameInput: '',
             phoneInput: '',
             mailInput: '',
